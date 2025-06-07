@@ -26,6 +26,63 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+    .status-box {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 2px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      font-size: 0.9rem;
+      position: relative;
+      cursor: default;
+    }
+
+    .status-icon {
+      margin-right: 5px;
+    }
+
+    .status-box.utilized:hover::after {
+      content: "System actively used by the Biliran Provincial Hospital.";
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      z-index: 999;
+      opacity: 0;
+      animation: fadeIn 0.3s forwards;
+    }
+
+    .status-box.deployed:hover::after {
+      content: "System has been deployed on a Laragon web hosting server.";
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      z-index: 999;
+      opacity: 0;
+      animation: fadeIn 0.3s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 
 <body class="portfolio-details-page">
@@ -239,13 +296,16 @@
                 <li><strong>Category</strong> Web Application</li>
                 <li><strong>Client</strong> Biliran Provincial Hospital</li>
                 <li><strong>Project Date Start</strong> January 23, 2025</li>
-                <li><strong>Programming Language</strong>PHP, Javascript</li>
+                <li><strong>Tech Stack</strong>PHP, Javascript</li>
                 <li><strong>Framework</strong>Laravel</li>
                 <li><strong>Software Utilized</strong>XAMPP, Laragon, PhpMyAdmin, MySQL Server, Microsoft Excel, Microsoft Word</li>
                 <li>
                   <strong>Status</strong> 
-                  <span class="status-box">
+                  <span class="status-box deployed">
                     <i class="bi bi-upload status-icon"></i> Deployed
+                  </span>
+                  <span class="status-box utilized">
+                    <i class="bi bi-check-circle-fill status-icon"></i> Utilized
                   </span>
                 </li>
               </ul>
